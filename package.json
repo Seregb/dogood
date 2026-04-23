@@ -1,0 +1,29 @@
+{
+    "name": "do-good",
+    "version": "1.0.0",
+    "description": "Do Good - платформа для обмена товарами",
+    "scripts": {
+        "install:server": "cd server && npm install",
+        "install:client": "cd client && npm install",
+        "install:all": "npm run install:server && npm run install:client",
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "server": "cd server && npm start",
+        "client": "cd client && npm start",
+        "db:migrate": "cd server && npx sequelize-cli db:migrate",
+        "db:seed": "cd server && npx sequelize-cli db:seed:all",
+        "db:reset": "cd server && npx sequelize-cli db:migrate:undo:all && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
+        "db:undo": "cd server && npx sequelize-cli db:migrate:undo"
+    },
+    "keywords": [
+        "react",
+        "express",
+        "postgresql",
+        "redux",
+        "yandex-maps"
+    ],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "concurrently": "^7.6.0"
+    }
+}
